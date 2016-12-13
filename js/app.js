@@ -51,18 +51,17 @@ Player.prototype.update = function(dt) {
             this.startOver();
         }
     }
+};
+
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     // Win condition
     if (this.y <= 10) {
         this.startOver();
         console.log("You win!");
     }
-
 };
-
-Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
+//set the player's postion to the start point
 Player.prototype.startOver = function() {
     this.x = 200;
     this.y = 400;
